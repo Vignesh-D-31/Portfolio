@@ -1,0 +1,46 @@
+div{
+    padding: 10px;
+}
+
+.container{
+    height: 700px;
+    border: 1px solid rgb(214, 213, 213);
+    padding: 20px;
+    display: flex;
+    flex-direction: row ;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.cricket{
+    border-bottom: 2px solid #000;
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid rgb(214, 213, 213);
+    flex-basis: 30%;
+    
+}
+
+.player1{
+    flex-basis: 50%;
+    order: 2;
+} 
+
+.player5{
+    order: 1;
+} 
+
+
+
+
+
+h3{
+    margin: 0%;
+    background-color: rgb(191, 189, 189);
+    border-bottom: 2px solid #000 ;
+}
+
+p{
+    margin: 0%;
+    padding-bottom: 50px;
+}

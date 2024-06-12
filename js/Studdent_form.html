@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <h1>Student Form</h1>
+
+    <table border="1" cellpadding="5" cellspacing="5" >
+        <tr>
+            <th>Name</th>
+            <td>
+                <input type="text" placeholder="name" autofocus="on" autocomplete="on" id="i1">
+            </td>
+
+        </tr>
+        
+        <tr>
+            <th>Age</th>
+            <td>
+                <input type="number" placeholder="age" autofocus="on" autocomplete="on" id="i2">
+            </td>
+        </tr>
+
+        <tr>
+            <th>Gender</th> 
+            <td>
+                <input type="radio" name="radio" id="radio1">
+                <label for="radio"> Male</label>
+                <input type="radio" id="radio2">
+                <label for="radio"> Female</label>
+            </td>
+        </tr>
+
+        <tr>
+            <th>Course</th>
+            <td>
+                <select name="Course" id="dropdown">
+                    <option value="JS">JS</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <th>E-mail</th>
+            <td>
+                <input type="email" placeholder="e-mail" autofocus="on" autocomplete="on" id="i3">
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <center>
+                <button id="b" onclick="save()">Save</button>
+                </center>
+            </td>
+        </tr>
+    </table>
+
+    <div id="div"></div>
+</body>
+</html>
+
+<style>
+    #b{
+        background-color:aquamarine;
+        width: 230px;
+    }
+</style>
+
+<script>
+    var i1=document.querySelector("#i1")    
+    var i2=document.querySelector("#i2")    
+    var i3=document.querySelector("#i3")  
+    var div=document.querySelector("#div")
+
+    var tab=document.createAttribute("table")
+    tab.innerHTML="<tr><th>NAME</th> <th>AGE</th> <th>Course</th> <th>EMAIL</th> <th>Action</th></tr>"
+
+    console.log(tab)
+    
+    function save()
+    {
+        var tab1=document.createAttribute("table")
+        tab1.innerHTML="<tr><th> i1.value </th> <th>AGE</th> <th>Course</th> <th>EMAIL</th> <th>Action</th></tr>"
+        document.getElementById("div").appendChild(tab1)
+    }
+
+</script>
