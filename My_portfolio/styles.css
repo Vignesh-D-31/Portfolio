@@ -117,6 +117,11 @@ nav{
     list-style: none;
     position: relative;
 }
+
+.nav-menu.responsive .nav-link{
+    color: #000000;
+}
+
 .nav-link{
     text-decoration: none;
     color: var(--text-color-second);
@@ -131,6 +136,7 @@ nav{
 }
 .nav-menu-btn{
     display: none;
+    color: white;
 }
 .nav-menu-btn i{
     font-size: 28px;
@@ -212,7 +218,7 @@ nav{
     color: var(--color-white);
 }
 .featured-text-btn>.blue-btn:hover{
-    background: var(--first-color-hover);
+    background: var(--second-color);
 }
 .social_icons{
     display: flex;
@@ -223,7 +229,7 @@ nav{
 .social_icons a{
   display: flex;
   text-decoration: none;
-  color: var(--second-color);
+  color:lime;
 }
 .icon{
     display: flex;
@@ -232,7 +238,7 @@ nav{
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    box-shadow: 0px 2px 5px 0px rgb(255, 0, 0);
+    box-shadow: 0px 2px 5px 0px white;
     cursor: pointer;
 }
 
@@ -250,16 +256,17 @@ nav{
 }
 .image{
     margin: auto 0;
-    width: 350px;
-    height: 350px;
-    border-radius: 55% 45% 55% 45%;
-    overflow: hidden;
-    animation: imgFloat 7s ease-in-out infinite;
+    width: 400px;
+    height: 400px;
+    margin-right: 50px;
+    
 }
+
 .image img{
-    width: 380px;
-    height: 380px;
+    width: 480px;
+    height: 550px;
     object-fit: cover;
+    border-radius: 15px;
 }
 @keyframes imgFloat {
     50%{
