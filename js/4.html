@@ -1,0 +1,72 @@
+<!-- Pop up -->
+
+<button onclick="popup()">Pop Up</button>
+<div id="over"></div>
+<div id="pop">
+    <p>Hi, I am pop up box</p>
+    <button onclick="clos()">Close</button>
+</div>
+
+<style>
+    #over{
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0.8;
+        z-index: 1;
+        display: none;
+    }
+
+    #pop{
+        background-color: white;
+        color: black;
+        position: absolute;
+        padding: 5px;
+        margin: 5px;
+        width: 30%;
+        left: 35%;
+        text-align: center;
+        z-index: 2;
+        display: none;
+    }
+</style>
+
+<script>
+    var over=document.querySelector("#over")
+    var pop=document.querySelector("#pop")
+
+    function popup()
+    {
+        over.style.display="block"
+        pop.style.display="block"
+    }
+
+    function clos()
+    {
+        over.style.display="none"
+        pop.style.display="none"
+    }
+</script>
+
+<hr>
+
+<!-- eventListener -->
+
+<button id="btn">SHOW</button>
+
+<script>
+    var btn=document.querySelector("#btn")
+
+    // one or more action can performed using eventListener
+     
+    btn.addEventListener("click",function(){
+        alert("HI DV")
+    })
+
+    btn.addEventListener("mouseover",function(){
+        alert("Mouse is on the button")
+    })
+</script>

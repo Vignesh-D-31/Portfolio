@@ -117,6 +117,11 @@ nav{
     list-style: none;
     position: relative;
 }
+
+.nav-menu.responsive .nav-link{
+    color: #000000;
+}
+
 .nav-link{
     text-decoration: none;
     color: var(--text-color-second);
@@ -131,6 +136,7 @@ nav{
 }
 .nav-menu-btn{
     display: none;
+    color: white;
 }
 .nav-menu-btn i{
     font-size: 28px;
@@ -212,7 +218,7 @@ nav{
     color: var(--color-white);
 }
 .featured-text-btn>.blue-btn:hover{
-    background: var(--first-color-hover);
+    background: var(--second-color);
 }
 .social_icons{
     display: flex;
@@ -223,7 +229,7 @@ nav{
 .social_icons a{
   display: flex;
   text-decoration: none;
-  color: var(--second-color);
+  color:lime;
 }
 .icon{
     display: flex;
@@ -232,7 +238,7 @@ nav{
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    box-shadow: 0px 2px 5px 0px rgb(255, 0, 0);
+    box-shadow: 0px 2px 5px 0px white;
     cursor: pointer;
 }
 
@@ -250,16 +256,17 @@ nav{
 }
 .image{
     margin: auto 0;
-    width: 350px;
-    height: 350px;
-    border-radius: 55% 45% 55% 45%;
-    overflow: hidden;
-    animation: imgFloat 7s ease-in-out infinite;
+    width: 400px;
+    height: 400px;
+    margin-right: 50px;
+    
 }
+
 .image img{
-    width: 380px;
-    height: 380px;
+    width: 480px;
+    height: 550px;
     object-fit: cover;
+    border-radius: 15px;
 }
 @keyframes imgFloat {
     50%{
@@ -401,6 +408,182 @@ h3{
     padding: 2px 10px;
     border-radius: 5px;
 }
+
+/* --------Education box-------- */
+
+
+.h1 {
+    color: white;
+    margin-top: 150px;  
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+#i{
+    font-size: 40px;
+    color: #00B5E7;
+
+}
+.ul {
+  --col-gap: 2rem;
+  --row-gap: 2rem;
+  --line-w: 0.25rem;
+  display: grid;
+  grid-template-columns: var(--line-w) 1fr;
+  grid-auto-columns: max-content;
+  column-gap: var(--col-gap);
+  list-style: none;
+  width: min(60rem, 90%);
+  margin-inline: auto;
+}
+
+/* line */
+.ul::before {
+  content: "";
+  grid-column: 1;
+  grid-row: 1 / span 20;
+  background:white;
+  border-radius: calc(var(--line-w) / 2);
+}
+
+
+/* row gaps */
+.ul .li:not(:last-child) {
+  margin-bottom: var(--row-gap);
+}
+
+/* card */
+.ul .li {
+  grid-column: 2;
+  --inlineP: 1.5rem;
+  margin-inline: var(--inlineP);
+  grid-row: span 2;
+  display: grid;
+  grid-template-rows: min-content min-content min-content;
+  background: white;
+}
+
+/* level */
+.ul .li .level {
+  --levelH: 3rem;
+  height: var(--levelH);
+  margin-inline: calc(var(--inlineP) * -1);
+
+  text-align: center;
+  background-color: var(--accent-color);
+
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  display: grid;
+  place-content: center;
+  position: relative;
+
+  border-radius: calc(var(--levelH) / 2) 0 0 calc(var(--levelH) / 2);
+}
+
+/* level flap */
+.ul .li .level::before {
+  content: "";
+  width: var(--inlineP);
+  aspect-ratio: 1;
+  background: var(--accent-color);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
+  position: absolute;
+  top: 100%;
+
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  right: 0;
+}
+
+/* circle */
+.ul .li .level::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  aspect-ratio: 1;
+  background: var(--bgColor);
+  border: 0.3rem solid var(--accent-color);
+  border-radius: 50%;
+  top: 50%;
+
+  transform: translate(50%, -50%);
+  right: calc(100% + var(--col-gap) + var(--line-w) / 2);
+}
+
+/* place descr */
+.ul .li .place,
+.ul .li .descr {
+  background: var(--bgColor);
+  position: relative;
+  padding-inline: 1.5rem;
+}
+.ul .li .place {
+  overflow: hidden;
+  padding-block-start: 1.5rem;
+  padding-block-end: 1rem;
+  font-weight: 500;
+}
+.ul .li .descr {
+  padding-block-end: 1.5rem;
+  font-weight: 300;
+}
+
+/* shadows */
+.ul .li .place::before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 0.5rem;
+  background: black;
+  left: 50%;
+  border-radius: 50%;
+  filter: blur(4px);
+  transform: translate(-50%, 50%);
+}
+.ul .li .place::before {
+  bottom: calc(100% + 0.125rem);
+}
+
+.ul .li .descr::before {
+  z-index: -1;
+  bottom: 0.25rem;
+}
+
+@media (min-width: 40rem) {
+  .ul {
+    grid-template-columns: 1fr var(--line-w) 1fr;
+  }
+  .ul::before {
+    grid-column: 2;
+  }
+  .ul .li:nth-child(odd) {
+    grid-column: 1;
+  }
+  .ul .li:nth-child(even) {
+    grid-column: 3;
+  }
+
+  /* start second card */
+  .ul .li:nth-child(2) {
+    grid-row: 2/4;
+  }
+
+  .ul .li:nth-child(odd) .level::before {
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    left: 0;
+  }
+
+  .ul .li:nth-child(odd) .level::after {
+    transform: translate(-50%, -50%);
+    left: calc(100% + var(--col-gap) + var(--line-w) / 2);
+  }
+  .ul .li:nth-child(odd) .level {
+    border-radius: 0 calc(var(--levelH) / 2) calc(var(--levelH) / 2) 0;
+  }
+}
+
 
 /* ----- CERTIFICATE BOX ----- */
 

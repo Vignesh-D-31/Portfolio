@@ -33,7 +33,7 @@ function myMenuFunction(){
 
 /* ----- TYPING EFFECT ----- */
    var typingEffect = new Typed(".typedText",{
-      strings : ["FrontEnd Developer","Web Designer","App Developer"],
+      strings : ["Web Designer"],
       loop : true,
       typeSpeed : 100, 
       backSpeed : 80,
@@ -76,6 +76,7 @@ function myMenuFunction(){
   
   srLeft.reveal('.about-info',{delay: 100})
   sr.reveal('.certificate-box',{interval: 200})
+  sr.reveal('.li',{interval: 200})
   srLeft.reveal('.contact-info',{delay: 100})
 
   /* -- ABOUT SKILLS & FORM BOX -- */
